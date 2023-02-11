@@ -1,9 +1,0 @@
-{
-  "name": "qrcode",
-  "version": "1.22.5",
-  "description": "assessment",
-  "main": "index.js",
-  "repository": "https://github.com/Erhimuebru/yoke-assessment.git",
-  "author": "Erhimuebru <erhimu.ebru@decagon.dev>",
-  "license": "MIT"
-}
