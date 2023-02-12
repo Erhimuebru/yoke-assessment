@@ -9,7 +9,7 @@ const MyQRCode = () => {
   useEffect(() => {
     const generateQRCode = async () => {
       const url = await QRCode.toDataURL(
-        "https://bespoke-belekoy-b0b655.netlify.app/"
+        "https://assessment-movies.netlify.app/"
       );
       setDataURL(url);
     };
@@ -19,7 +19,7 @@ const MyQRCode = () => {
   useEffect(() => {
     const intervalId = setInterval(async () => {
       const url = await QRCode.toDataURL(
-        "https://bespoke-belekoy-b0b655.netlify.app/"
+        "https://assessment-movies.netlify.app/"
       );
       setDataURL(url);
     }, 10000);

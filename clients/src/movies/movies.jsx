@@ -1,5 +1,7 @@
 import axios from "axios";
+import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
+import { BiArrowBack } from "react-icons/bi";
 import "./movies.css";
 
 const Movies = () => {
@@ -34,7 +36,17 @@ const Movies = () => {
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   };
-  return <div className="movie-contain">{displayData}</div>;
+  return (
+    <>
+      <Link className="link" to={"/"}>
+        <div className="back">
+          <BiArrowBack />
+          <p className="back-text">Scan More Movies</p>
+        </div>
+      </Link>
+      <div className="movie-contain">{displayData}</div>
+    </>
+  );
 };
 
 export default Movies;
