@@ -1,0 +1,12 @@
+.background{
+    align-items: center;
+    justify-content: center;
+    margin-top: 8rem;
+    margin-left: 38rem;
+    font-size: 20rem;
+}
+
+.img{
+    font-size: 20rem;
+    color: red;
+}

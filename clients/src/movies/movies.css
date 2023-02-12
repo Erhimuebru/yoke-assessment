@@ -1,0 +1,78 @@
+.movie-img{
+    height: 320px;
+    width: 315px;
+    margin-left: -1rem;
+}
+
+.movie-contain{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-top: 3rem;
+    padding-top: 3rem;
+}
+
+
+    .movie-container{
+        width: 310px;
+        height: 400px;
+        color: #198;
+        font-weight: bolder;
+        opacity: 0.8;
+        border-radius: 12px;
+        margin-top: 2rem;
+         border: none; 
+         transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+         box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1); 
+        padding-left: 2rem;
+        font-size: 1rem;
+        margin-bottom: 5rem;
+        display: flex;
+        flex-direction: column;
+        margin:0 auto;
+        margin-bottom: 3.5rem;
+        margin-top: 4rem;
+             
+    }
+
+    .movie-container:hover {
+        opacity: 1;
+        box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);  
+        cursor: pointer;
+      }
+
+      .movie-title{
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-align: center;
+
+      }
+    
+
+      .paginationBttns{
+        width: 80%;
+        height: 40px;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        margin-left: 8rem;
+        margin-top: 2rem;
+      }
+    
+      .paginationBttns a{
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #198754;
+        color: #198754;
+        cursor: pointer;
+        margin: 0.5rem;
+      }
+    
+      .paginationBttns a:hover{
+        color: white;
+        background-color: #198754;
+      }
+    
+      .paginationActive a{
+        color: white;
+        background-color: #198754;
+      }
