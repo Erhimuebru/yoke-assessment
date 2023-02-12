@@ -18,14 +18,12 @@ export class QrcodeController {
   }
 
   getMovie(): string[] {
-    const movieList = [
-      "mongodb+srv://erhimuebru:dftS6ew21jiATWHi@cluster0.lye52ec.mongodb.net/movies",
-    ]; // Put here the list of all available movies
+    const movieList = `https://assessmentqecode.onrender.com/movie`;
     const randomMovies = [];
     for (let i = 0; i < 10; i++) {
       const randomIndex = Math.floor(Math.random() * movieList.length);
       randomMovies.push(movieList[randomIndex]);
-      movieList.splice(randomIndex, 1);
+      movieList.slice(randomIndex, 1);
     }
     return randomMovies;
   }
@@ -36,12 +34,10 @@ export class QrcodeController {
 
   @Get("/")
   async generateQRCod(@Response() res): Promise<void> {
-    const text = "https://assessmentqecode.onrender.com" + Date.now();
+    const text = "https://assessmentqecode.onrender.com";
     const qrCode = await this.generateQRCode(text);
     res.contentType("image/png");
-    // res.send(qrCode);
-    // res.redirect('http://localhost/5000/movie/');
-    // res.render('/movies', { movies: this.movie });
+    res.send(qrCode);
   }
 
   @Get("/movies/:timestamp")

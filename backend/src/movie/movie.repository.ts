@@ -1,13 +1,14 @@
-import { Injectable } from '@nestjs/common';
-import { CreateMovieDto } from './dto/create-movie.dto';
-import { FilterQuery, Model } from 'mongoose';
-import { InjectModel } from '@nestjs/mongoose';
-import { Movie, MovieDocument } from './schemas/movie.schema';
+import { Injectable } from "@nestjs/common";
+import { CreateMovieDto } from "./dto/create-movie.dto";
+import { FilterQuery, Model } from "mongoose";
+import { InjectModel } from "@nestjs/mongoose";
+import { Movie, MovieDocument } from "./schemas/movie.schema";
 
 @Injectable()
 export class MovieRepository {
+  [x: string]: any;
   constructor(
-    @InjectModel(Movie.name) private readonly movieModel: Model<MovieDocument>,
+    @InjectModel(Movie.name) private readonly movieModel: Model<MovieDocument>
   ) {}
 
   async findOne(movieFilterQuery: FilterQuery<Movie>): Promise<Movie> {
@@ -25,7 +26,7 @@ export class MovieRepository {
 
   async findOneAndUpdate(
     movieFilterQuery: FilterQuery<Movie>,
-    movie: Partial<Movie>,
+    movie: Partial<Movie>
   ): Promise<Movie> {
     return this.movieModel.findOneAndUpdate(movieFilterQuery, movie);
   }

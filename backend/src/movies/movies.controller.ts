@@ -1,29 +1,22 @@
-import { Controller, Get } from '@nestjs/common';
-import * as qrcode from 'qrcode';
+import { Controller, Get, Res } from "@nestjs/common";
+import { MoviesService } from "./movies.service";
+import * as qrcode from "qrcode";
+import { Response } from "express";
 
-@Controller('movies')
+@Controller()
 export class MoviesController {
-  @Get()
-  async getMovies(): Promise<any[]> {
-    // Make a GET request to the API to get the list of movies
-    const response = await fetch('http://localhost/5000/movie');
-    const movies = await response.json();
-    return movies;
+  movies: any;
+  constructor(private readonly MoviesService: MoviesService) {}
+  @Get("qr")
+  async generateQR(@Res() res: Response) {
+    const url = "https://localhost/movies";
+    const qr = await qrcode.toDataURL(url);
+    res.contentType("image/png");
+    res.end(qr, "base64");
   }
 
-  @Get('qrcode')
-  async getQRCode(): Promise<string> {
-    const movieList = await this.getMovies();
-    const randomMovies = [];
-    for (let i = 0; i < 10; i++) {
-      const randomIndex = Math.floor(Math.random() * movieList.length);
-      randomMovies.push(movieList[randomIndex]);
-      movieList.splice(randomIndex, 1);
-    }
-
-    const text = 'http://localhost/5000/movie' + Date.now();
-    const qrCode = await qrcode.toDataURL(text);
-
-    return qrCode;
+  @Get("movies")
+  getMovies(): any[] {
+    return this.MoviesService.getRandomMovies();
   }
 }
