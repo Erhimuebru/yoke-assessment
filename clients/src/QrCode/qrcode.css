@@ -1,12 +1,16 @@
-.background{
+
+
+.qr-code-container {
+    width: 500px;
+    height: 500px;
     align-items: center;
     justify-content: center;
-    margin-top: 8rem;
-    margin-left: 38rem;
-    font-size: 20rem;
-}
-
-.img{
-    font-size: 20rem;
-    color: red;
-}
+    margin-top: 13rem;
+    margin-left: 32rem;
+  }
+  
+  .qr-code-image {
+    width: 70%;
+    height: 70%;
+ 
+  }

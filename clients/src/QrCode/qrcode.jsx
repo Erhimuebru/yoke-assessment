@@ -9,7 +9,7 @@ const MyQRCode = () => {
   useEffect(() => {
     const generateQRCode = async () => {
       const url = await QRCode.toDataURL(
-        "https://gilded-youtiao-9fbdf6.netlify.app/"
+        "https://bespoke-belekoy-b0b655.netlify.app/"
       );
       setDataURL(url);
     };
@@ -19,7 +19,7 @@ const MyQRCode = () => {
   useEffect(() => {
     const intervalId = setInterval(async () => {
       const url = await QRCode.toDataURL(
-        "https://gilded-youtiao-9fbdf6.netlify.app/"
+        "https://bespoke-belekoy-b0b655.netlify.app/"
       );
       setDataURL(url);
     }, 10000);
@@ -29,8 +29,8 @@ const MyQRCode = () => {
   }, [dataURL]);
 
   return (
-    <div className="background">
-      <img src={dataURL} />
+    <div className="qr-code-container">
+      <img className="qr-code-image" src={dataURL} />
     </div>
   );
 };
