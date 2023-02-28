@@ -4,12 +4,11 @@ import QRCode from "qrcode";
 
 const MyQRCode = () => {
   const [dataURL, setDataURL] = useState("");
-  const [pageNumber, setPageNumber] = useState(0);
 
   useEffect(() => {
     const generateQRCode = async () => {
       const url = await QRCode.toDataURL(
-        "https://assessment-movies.netlify.app/"
+        "https://movie-collections.netlify.app/"
       );
       setDataURL(url);
     };
@@ -19,7 +18,7 @@ const MyQRCode = () => {
   useEffect(() => {
     const intervalId = setInterval(async () => {
       const url = await QRCode.toDataURL(
-        "https://assessment-movies.netlify.app/"
+        "https://movie-collections.netlify.app/"
       );
       setDataURL(url);
     }, 10000);
